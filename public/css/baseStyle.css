@@ -2,6 +2,7 @@
 :root {
   --primary-color: #5762D5;
   --secondary-color: #3F403F;
+  --accent1-color: white;
 
   --heading-font: "DM Serif Text", serif;
   --paragraph-font: "Lato", sans-serif;
@@ -52,7 +53,7 @@ nav {
   flex-wrap: wrap;
   text-align: center;
 }
-.navigation >li , .navigation a:visited{
+.navigation li , .navigation a:visited , .navigation a{
   flex: 1 0 80px;
   color: white;
 }
@@ -81,8 +82,8 @@ h1 {
 }
 .hero article {
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 7%;
+  left: 15%;
   background-color: white;
   opacity: 80%;
 }
@@ -103,11 +104,18 @@ h1 {
   color: black;
 }
 
-.details{
-  display: grid;
-  margin: 2rem;
+.details {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-content: space-evenly;
+  flex-wrap: wrap;
 }
 
+.details section {
+  flex-shrink: 1;
+  padding: 1.5rem;
+}
 .reviews, .upgrades {
   margin-top: 5rem;
 }
@@ -116,18 +124,14 @@ h1 {
 }
 
 .upgrades ul{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+}
+.upgrades li{
+  display: block;
+  list-style: none;
+  flex: 1 0 80px;
   justify-items: center;
-}
-#bumper {
-  grid-row: 2/3;
-  grid-column: 1/2;
-}
-#hub {
-  grid-row: 2/3;
-  grid-column: 2/3;
 }
 .card img{
   background-color: var(--primary-color);

@@ -17,11 +17,8 @@
     }
 
     .details {
-        display: flex;
         flex-direction: row-reverse;
         margin: .5rem;
-    }
-    .details section{
-        margin: 1.5rem;
+        flex-wrap: nowrap;
     }
 }
