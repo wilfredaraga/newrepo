@@ -1,0 +1,27 @@
+@media screen and (min-width: 640px) {
+    body {
+    background-image: url("../images/site/small_check.jpg");
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: 1rem;
+    }
+
+    #wrapper {
+    background-color: white;
+    border: 5px solid var(--primary-color);
+    border-radius: 10px;
+    }
+
+    .hero article{
+        left: 15%;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: .5rem;
+    }
+    .details section{
+        margin: 1.5rem;
+    }
+}

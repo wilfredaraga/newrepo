@@ -1,0 +1,150 @@
+/******* Change Box Model ***************/
+:root {
+  --primary-color: #5762D5;
+  --secondary-color: #3F403F;
+
+  --heading-font: "DM Serif Text", serif;
+  --paragraph-font: "Lato", sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+p, li, a, button {
+  font-size: 25px;
+  font-family: var(--paragraph-font);
+}
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+}
+.siteName a , .siteName a:visited{
+  font-size: xx-large;
+  padding: 1rem;
+  font-family: var(--heading-font);
+  color: black;
+  text-decoration: none;
+}
+.siteName a:hover, #tools a:hover{
+  text-shadow: 0 0 2rem var(--primary-color);
+}
+#tools a, #tools a:visited{
+  padding: 1rem;
+  color: black;
+  text-decoration: none;
+}
+nav {
+  background-color: var(--secondary-color);
+}
+.navigation {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.navigation >li , .navigation a:visited{
+  flex: 1 0 80px;
+  color: white;
+}
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: .7rem;
+  margin: .3rem;
+}
+.navigation a:hover {
+  background-color: gray;
+  color: black;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+.hero {
+  position: relative;
+}
+.hero img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+.hero article {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  background-color: white;
+  opacity: 80%;
+}
+.hero p, .hero h2{
+  opacity: 100%;
+  color: var(--primary-color);
+}
+
+.hero button{
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  opacity: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+}
+
+.details{
+  display: grid;
+  margin: 2rem;
+}
+
+.reviews, .upgrades {
+  margin-top: 5rem;
+}
+.reviews li, .reviews h2{
+  padding: 5px;
+}
+
+.upgrades ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+}
+#bumper {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+#hub {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.card img{
+  background-color: var(--primary-color);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  border: 1px solid black;
+}
+.card a {
+  display: block;
+  text-align: center;
+}
+.card {
+  margin: 1rem;
+}
+
+footer{
+  margin: 1rem;
+}
