@@ -45,7 +45,7 @@ Util.buildClassificationGrid = async function (data) {
             + vehicle.inv_make + ' ' + vehicle.inv_model + 'details">'
             + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
             grid += '</h2>'
-            grid += '</span>$'
+            grid += '<span>$'
             + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</span>'
             grid += '</div>'
             grid += '</li>'
@@ -55,6 +55,28 @@ Util.buildClassificationGrid = async function (data) {
         grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
     }
     return grid
+}
+
+/* **************************************
+* Build the details view HTML
+* ************************************ */
+Util.buildVehicleDetails = async function (vehicle) {
+    let details = `<h1>${vehicle.inv_make} ${vehicle.inv_model}</h1>`
+    details += `<div class="wholePage">
+    <img id="vehicleImg" src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}`
+    details += `<section id="fullDetails>
+    <h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>`
+    details += `<span id="price">$${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</span>`
+    details += `<section id="vehicleDetails">
+    <h3>Vehicle Details:</h3>
+    <p><span>Mileage:</span> ${vehicle.inv_miles}\n
+    <span>Color:</span> ${vehicle.inv_color}\n
+    <span>Description:</span> ${vehicle.inv_description}</p>
+    </section>`
+    details += `</section>`
+    details += `</div>`
+
+    return details
 }
 
 /* ****************************************
