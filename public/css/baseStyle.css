@@ -21,8 +21,17 @@ p, li, a, button {
 }
 h1, h2, h3 {
   font-family: var(--heading-font);
-  font-size: 2rem;
 }
+h1{
+  font-size: 30px;
+}
+h2{
+  font-size: 28px;
+}
+h3{
+  font-size: 26px;
+}
+
 header{
   display: flex;
   align-items: center;
@@ -151,4 +160,79 @@ h1 {
 
 footer{
   margin: 1rem;
+}
+
+/* Classification View */
+#inv-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#inv-display li {
+  display: block;
+  flex: 1 0 80px;
+  margin: 3rem;
+  padding: 1.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  justify-items: center;
+}
+hr {
+  border: 1px solid black;
+}
+#inv-display a :visited , #inv-display a{
+  color: black;
+}
+#inv-display a :hover{
+  box-shadow: 0 0 1rem var(--primary-color);
+  opacity: 70%;
+}
+#inv-display .namePrice a{
+  text-decoration: none;
+}
+#inv-display .namePrice a:hover {
+  text-shadow: 0 0 1rem var(--primary-color);
+}
+.namePrice span{
+  color: green;
+}
+
+/* Vehicle View */
+.wholePage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wholePage img{
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+.wholePage section, .wholePage img {
+  display: block;
+  flex: 1 1 18rem;
+  margin: 2rem;
+}
+.wholePage span{
+  font-weight: bold;
+}
+
+#price {
+  color: green;
+}
+
+/* Error View */
+#errorHero {
+  max-width: 100%;
+  height: auto;
+  opacity: 30%;
+  position: relative;
+}
+
+#errorMessage {
+  position: absolute;
+  top: 30%;
+  margin: 2rem;
+  background-color: rgb(240, 240, 240);
+  padding: 2rem;
 }

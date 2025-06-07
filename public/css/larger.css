@@ -21,4 +21,14 @@
         margin: .5rem;
         flex-wrap: nowrap;
     }
+
+    #inv-display li {
+        flex: 0 1 20rem;
+        margin: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    #errorMessage{
+        top: 40%;
+    }
 }

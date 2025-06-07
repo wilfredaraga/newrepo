@@ -9,12 +9,7 @@ router.get('/type/:classificationId', utilities.handleErrors(invController.build
 
 // Route to build inventory by car view
 router.get('/detail/:inventoryId', utilities.handleErrors(invController.buildByInventoryId));
-
-// Route to build management inventory view
-router.get('/manCla', utilities.handleErrors(invController.buildClassifiManagementView))
-router.get('/manInv', utilities.handleErrors(invController.buildInventManagementView))
-
-router.get('/delete/:inventoryId', utilities.handleErrors(invController.deleteInventoryView));
-router.post('/delete/:inventoryId', utilities.handleErrors(invController.deleteInventoryItem))
+// Error route
+router.get('/error/20', utilities.handleErrors(invController.buildByInventoryError));
 
 module.exports = router;

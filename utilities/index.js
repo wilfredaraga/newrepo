@@ -39,9 +39,9 @@ Util.buildClassificationGrid = async function (data) {
             + '" title="View ' + vehicle.inv_make + ' ' + vehicle.inv_model
             + 'details"><img src="' + vehicle.inv_thumbnail
             + '" alt="Image of ' + vehicle.inv_make + ' ' + vehicle.inv_model
-            + ' on CSE Motors" /></a>'
+            + ' on CSE Motors"></a>'
             grid += '<div class="namePrice">'
-            grid += '<hr />'
+            grid += '<hr>'
             grid += '<h2>'
             grid += '<a href="../../inv/detail/' + vehicle.inv_id + '" title="View '
             + vehicle.inv_make + ' ' + vehicle.inv_model + 'details">'
@@ -64,16 +64,14 @@ Util.buildClassificationGrid = async function (data) {
 * ************************************ */
 Util.buildVehicleDetails = async function (vehicle) {
     let details = `<div class="wholePage">
-    <img id="vehicleImg" src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}`
-    details += `<section id="fullDetails>
+    <img id="vehicleImg" src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}">`
+    details += `<section id="fullDetails">
     <h2>${vehicle.inv_year} ${vehicle.inv_make} ${vehicle.inv_model}</h2>`
-    details += `<span id="price">$${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</span>`
-    details += `<section id="vehicleDetails">
-    <h3>Vehicle Details:</h3>
-    <p><span>Mileage:</span> ${vehicle.inv_miles}\n
-    <span>Color:</span> ${vehicle.inv_color}\n
-    <span>Description:</span> ${vehicle.inv_description}</p>
-    </section>`
+    details += `<p id="price">$${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}</p>`
+    details += `<h3>Vehicle Details:</h3>
+    <p><span>Mileage:</span> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>
+    <p><span>Color:</span> ${vehicle.inv_color}</p>
+    <p><span>Description:</span> ${vehicle.inv_description}</p>`
     details += `</section>`
     details += `</div>`
 

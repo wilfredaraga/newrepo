@@ -38,4 +38,21 @@ invCont.buildByInventoryId = async function (req, res, next) {
     
 }
 
+/* ***************************
+ *  Build inventory by vehicle view for error link
+ * ************************** */
+invCont.buildByInventoryError = async function (req, res, next) {
+    const inv_id = req.params
+    const data = await invModel.getVehicleByInventoryError(inv_id)
+    const details = await utilities.buildVehicleDetails(data)
+    //let nav = await utilities.getNav()
+    const carMakeModel = `${data.inv_make} ${data.inv_model}` 
+    res.render('./inventory/vehicle', {
+        title: carMakeModel,
+        nav,
+        details
+    })
+    
+}
+
 module.exports = invCont
