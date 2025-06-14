@@ -1,9 +1,9 @@
 /******* Change Box Model ***************/
 :root {
-  --primary-color: #5762D5;
+  --primary-color: #58d5d3;
   --secondary-color: #3F403F;
   --accent1-color: white;
-
+  --accent2-color: #F7E8A4;
   --heading-font: "DM Serif Text", serif;
   --paragraph-font: "Lato", sans-serif;
 }
@@ -235,4 +235,55 @@ hr {
   margin: 2rem;
   background-color: rgb(240, 240, 240);
   padding: 2rem;
+}
+
+/* Forms */
+form {
+  margin: auto;
+  padding: 1rem;
+  max-width: 30rem;
+  font-family: var(--paragraph-font);
+}
+fieldset {
+  padding: 1rem;
+  background-color: var(--primary-color);
+}
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+input , textarea, select{
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding: .8rem;
+  border-radius: 8px;
+  width: 20rem;
+  background-color: #f8f8f8;
+}
+textarea {
+  height: 120px
+}
+input:valid, textarea:valid {
+  background-color: #befdcb;
+}
+input:invalid, textarea:invalid {
+  color: red;
+}
+
+.notice {
+  color: red;
+  margin-left: 2rem;
+  font-style: italic;
+}
+
+input[type=submit] {
+  width: 8rem;
+  height: 3rem;
+  border: 1px solid black;
+  background-color: #F7E8A4;
+}
+
+/* Management View */
+.management{
+  margin: 3rem;
 }
