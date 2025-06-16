@@ -123,7 +123,7 @@ invCont.buildAddInventory = async function (req, res) {
 }
 
 /* ****************************************
-*  Process adding classfication
+*  Process adding inventory
 * *************************************** */
 invCont.addInventory = async function (req, res) {
     const nav = await utilities.getNav()
