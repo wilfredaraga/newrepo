@@ -121,7 +121,7 @@ Util.checkJWTToken = (req, res, next) => {
  }
 
  /* **************************************
-* Build the add inventory view HTML
+* Build the add classification list HTML
 * ************************************ */
 Util.buildClassList = async function (classification_id = null) {
     let data = await invModel.getClassifications()
