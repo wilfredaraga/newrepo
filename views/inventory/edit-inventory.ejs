@@ -8,7 +8,7 @@
     </ul>
 <% } %>
 
-<form action="/inv/addInv" class="addInv" method="post">
+<form action="/inv/edit" class="editInv" method="post">
     <fieldset>
         <label for="classificationList">Classification:</label><br>
         <%- classList %>
@@ -21,15 +21,18 @@
         <label for="inv_description">Description:</label><br>
         <textarea name="inv_description" id="inv_description" required><%= locals.inv_description %></textarea><br>
         <label for="inv_image">Image Path:</label><br>
-        <input type="text" name="inv_image" id="inv_image" required value="/images/vehicles/no-image.png"><br>
+        <input type="text" name="inv_image" id="inv_image" required value="<%= locals.inv_image %>"><br>
         <label for="inv_thumbnail">Thumbnail Path:</label><br>
-        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required value="/images/vehicles/no-image-tn.png"><br>
+        <input type="text" name="inv_thumbnail" id="inv_thumbnail" required value="<%= locals.inv_thumbnail %>"><br>
         <label for="inv_price">Price:</label><br>
         <input type="number" name="inv_price" id="inv_price" required value="<%= locals.inv_price %>"><br>
         <label for="inv_miles">Miles:</label><br>
         <input type="number" name="inv_miles" id="inv_miles" required value="<%= locals.inv_miles %>"><br>
         <label for="inv_color">Color:</label><br>
         <input type="text" name="inv_color" id="inv_color" required value="<%= locals.inv_color %>"><br>
-        <input type="submit" value="Add Vehicle">
+        <input type="submit" value="Update Vehicle">
+        <input type="hidden" name="inv_id"
+        <% if (locals.inv_id) { %> value='<%= locals.inv_id %>'
+        <% } %>>
     </fieldset>
 </form>

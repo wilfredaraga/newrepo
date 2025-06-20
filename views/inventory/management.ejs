@@ -4,3 +4,12 @@
     <li><a href="/inv/addClass">Add New Classification</a></li>
     <li><a href="/inv/addInv">Add New Inventory</a></li>
 </ul>
+
+<section class="manageInv">
+    <h2>Manage Inventory</h2>
+    <p>Select a classification:</p>
+    <%- classificationSelect %>
+    <table id="inventoryDisplay"></table>
+    <noscript>Javascript must be enabled to use this page.</noscript>
+</section>
+<script src="../../js/inventory.js"></script>

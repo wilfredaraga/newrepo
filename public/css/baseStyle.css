@@ -72,7 +72,7 @@ nav {
   padding: .7rem;
   margin: .3rem;
 }
-.navigation a:hover {
+.navigation a:hover , .navigation a :active{
   background-color: gray;
   color: black;
 }
@@ -286,4 +286,17 @@ input[type=submit] {
 /* Management View */
 .management{
   margin: 3rem;
+}
+
+.manageInv{
+  margin: 2rem;
+}
+thead {
+  font-size: 22px;
+}
+table, td a {
+  font-size: 20px;
+}
+td {
+  padding: .5rem;
 }

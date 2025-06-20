@@ -54,7 +54,6 @@ validate.invRules = () => {
     .trim()
     .escape()
     .notEmpty()
-    .isLength({ min: 3 })
     .withMessage("Please choose a classification."),
 
     body('inv_make')
@@ -88,14 +87,12 @@ validate.invRules = () => {
 
     body('inv_image')
     .trim()
-    .escape()
     .notEmpty()
     .isLength({ min: 3 })
     .withMessage("Please provide image path."),
 
     body('inv_thumbnail')
     .trim()
-    .escape()
     .notEmpty()
     .isLength({ min: 3 })
     .withMessage("Please provide thumbnail path."),
@@ -131,6 +128,7 @@ validate.invRules = () => {
  * ***************************** */
 validate.checkInvData = async (req, res, next) => {
   const { classification_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+  let classList = await utilities.buildClassList(classification_id)
   let errors = []
   errors = validationResult(req)
   if(!errors.isEmpty()) {
@@ -139,6 +137,7 @@ validate.checkInvData = async (req, res, next) => {
             errors,
             title: 'Add New Inventory',
             nav,
+            classList,
             classification_id,
             inv_make,
             inv_model,
@@ -149,11 +148,45 @@ validate.checkInvData = async (req, res, next) => {
             inv_price,
             inv_miles,
             inv_price,
+            inv_color,
         })
         return
     }
     next()
 }
 
+/* ******************************
+ * Check data and return errors or continue to editing vehicle
+ * ***************************** */
+validate.checkUpdateData = async (req, res, next) => {
+  const { classification_id, inv_id, inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color } = req.body
+  let classList = await utilities.buildClassList(classification_id)
+  let errors = []
+  errors = validationResult(req)
+  const vehicleName = `${inv_make} ${inv_model}`
+  if(!errors.isEmpty()) {
+        const nav = await utilities.getNav()
+        res.render('inventory/edit-inventory', {
+            errors,
+            title: 'Edit ' + vehicleName,
+            nav,
+            classList,
+            inv_id,
+            classification_id,
+            inv_make,
+            inv_model,
+            inv_year,
+            inv_description,
+            inv_image,
+            inv_thumbnail,
+            inv_price,
+            inv_miles,
+            inv_price,
+            inv_color,
+        })
+        return
+    }
+    next()
+}
 
 module.exports = validate

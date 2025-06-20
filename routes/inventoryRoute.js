@@ -13,9 +13,6 @@ router.get('/detail/:inventoryId', utilities.handleErrors(invController.buildByI
 // Error route
 router.get('/error/20', utilities.handleErrors(invController.buildByInventoryError));
 
-//Route to management view
-router.get('/', utilities.handleErrors(invController.buildManagementView))
-
 //Route to add-classification view
 router.get('/addClass', utilities.handleErrors(invController.buildAddClassification))
 //Route to process adding a new classification
@@ -32,4 +29,14 @@ router.post('/addInv',
     invValidate.checkInvData,
     utilities.handleErrors(invController.addInventory))
     
+//Route to management view
+router.get('/', utilities.handleErrors(invController.buildManagementView))
+//Route to show the inventory in table
+router.get('/getInventory/:classification_id', utilities.handleErrors(invController.getInventoryJSON))
+
+//Route to edit an item in inventory view
+router.get('/edit/:inv_id', utilities.handleErrors(invController.buildEditVehicle))
+//Route to process modifying vehicle
+router.post('/edit/', invValidate.invRules() , invValidate.checkUpdateData, utilities.handleErrors(invController.editInventory))
+
 module.exports = router;
