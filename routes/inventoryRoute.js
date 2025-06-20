@@ -35,8 +35,13 @@ router.get('/', utilities.handleErrors(invController.buildManagementView))
 router.get('/getInventory/:classification_id', utilities.handleErrors(invController.getInventoryJSON))
 
 //Route to edit an item in inventory view
-router.get('/edit/:inv_id', utilities.handleErrors(invController.buildEditVehicle))
+router.get('/edit/:inv_id', utilities.handleErrors(invController.buildEditView))
 //Route to process modifying vehicle
 router.post('/edit/', invValidate.invRules() , invValidate.checkUpdateData, utilities.handleErrors(invController.editInventory))
+
+//Route to delete an item view
+router.get('/delete/:inv_id', utilities.handleErrors(invController.buildDeleteView))
+//Route to process the deletion of the vehicle
+router.post('/delete/', utilities.handleErrors(invController.deleteVehicle))
 
 module.exports = router;
