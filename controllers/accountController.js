@@ -129,4 +129,17 @@ async function buildManagement(req, res, next) {
     
 }
 
-module.exports = { buildLogin, buildRegister , registerAccount, accountLogin, buildManagement }
+/* ****************************************
+ *  Process logout request
+ * ************************************ */
+async function accountLogout(req, res) {
+  if(process.env.NODE_ENV === 'development') {
+        res.cookie("jwt", 'none', { httpOnly: true, expires: new Date(Date.now() + 10 *1000) })
+      } else {
+        res.cookie("jwt", 'none', { httpOnly: true, secure: true, expires: new Date(Date.now() + 10 *1000) })
+      }
+  req.flash("You're logged out. Please sign in!")
+  res.redirect("/account/login")
+}
+
+module.exports = { buildLogin, buildRegister , registerAccount, accountLogin, buildManagement, accountLogout }

@@ -33,10 +33,11 @@ h3{
 }
 
 header{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   margin: 1rem;
+  justify-items: center;
+  align-items: center;
 }
 .siteName a , .siteName a:visited{
   font-size: xx-large;
@@ -48,11 +49,34 @@ header{
 .siteName a:hover, #tools a:hover{
   text-shadow: 0 0 2rem var(--primary-color);
 }
-#tools a, #tools a:visited{
+#tools a, #tools a:visited, #welcome, #welcome :visited{
   padding: 1rem;
   color: black;
   text-decoration: none;
 }
+#welcome {
+  grid-column-start: 4;
+  justify-self: end;
+}
+#tools {
+  grid-column-start: 5;
+}
+#logout{
+  margin: 0;
+  padding: 0;
+  max-width: 10rem;
+  grid-column-start: 5;
+}
+#logout input{
+  padding: .8rem;
+  color: black;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  border: 1px solid black;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
 nav {
   background-color: var(--secondary-color);
 }

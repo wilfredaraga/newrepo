@@ -1,4 +1,5 @@
 const invModel = require('../models/inventory-model')
+const accModel = require('../models/account-model')
 const Util = {}
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
@@ -119,6 +120,19 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
+
+/* ****************************************
+ *  Check Login
+ * ************************************ */
+// Util.checkAccountType = async function (req, res, next) {
+//     const accountInfo = await accModel.getAccountByEmail(res.locals.accountData.account_email)
+//     const accountType = accountInfo.account_type
+//     if (accountType = 'Employee') {
+//         req.flash('notice', 'This must NOT be used when delivering the classification or detail views as they are meant for site visitors who may not be logged in.')
+//         return res.redirect("/account/login")
+//     } else
+
+// }
 
  /* **************************************
 * Build the add classification list HTML
